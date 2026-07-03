@@ -3,7 +3,12 @@ guid: 08c19573cc317af428cc5e0c34ef3705
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: small_floating rock_001
+    second: {fileID: 2100000, guid: 4e1d25c13bbcc2b459e9adc377abfa3b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
