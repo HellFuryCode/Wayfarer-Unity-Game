@@ -3,7 +3,12 @@ guid: d0441095c9132d14f84896101d2a0ee0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Small_Catus_001
+    second: {fileID: 2100000, guid: 0e5bfce10443d444bbbdf0dd551f9471, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
