@@ -26,7 +26,7 @@ public class playerMovement : MonoBehaviour
 
     private void Awake()
     {
-        characterController = GetComponentInChildren<CharacterController>();
+        characterController = GetComponent<CharacterController>();
         InputActionMap actionMapRef = InputSystem.FindActionMap(actionMapName);
         moveAction = actionMapRef.FindAction(Move);
         subscribeActiontoInput();
@@ -36,8 +36,8 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        rotateHead();
         handleMovement();
-        //rotateHead();
     }
     void subscribeActiontoInput()
     {
@@ -71,13 +71,12 @@ public class playerMovement : MonoBehaviour
         {
             Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
             transform.rotation = Quaternion.Slerp(transform.rotation,toRotation, rotationTime * Time.deltaTime);
-            
         }
     }
 
     void rotateHead()
     {
-        headObject.transform.LookAt(new Vector3(-camTransform.position.x, -camTransform.position.y + headOffsetY,-camTransform.position.z));
+        headObject.transform.rotation = camTransform.rotation;
     }
 
 
