@@ -22,6 +22,9 @@ public class playerMovement : MonoBehaviour
     private CharacterController characterController;
     private float rotationTime = 3f;
 
+    private Vector3 velocity;
+    [SerializeField] private float gravity = -5f;
+
     public int headOffsetY;
 
     private void Awake()
@@ -38,6 +41,7 @@ public class playerMovement : MonoBehaviour
     {
         rotateHead();
         handleMovement();
+        handleGravity();
     }
     void subscribeActiontoInput()
     {
@@ -72,6 +76,12 @@ public class playerMovement : MonoBehaviour
             Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
             transform.rotation = Quaternion.Slerp(transform.rotation,toRotation, rotationTime * Time.deltaTime);
         }
+    }
+
+    void handleGravity()
+    {
+        velocity.y += gravity * Time.deltaTime;
+        characterController.Move(velocity * Time.deltaTime);
     }
 
     void rotateHead()
