@@ -31,7 +31,7 @@ public class SceneTransition : MonoBehaviour
         if (other.CompareTag("Ship"))
         {
             print("ss");
-            FadeAndLoad("Test", 1f);
+            FadeAndLoad("Game_Scene", 1f);
         }
     }
 }
